@@ -1,8 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { mainColors } from "./styles/colors";
 import { Header } from "./sections/Header";
 import { MainImage } from "./sections/MainImage";
 import { Program } from "./sections/Program";
