@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --primary-text-color: #AA3325;
+  --background-pink-color: #FCECF4;
+  --white: #FFF7F9;
+  --primary-light: rgba(170, 51, 37, 0.2);
+  --shadow-color: rgba(170, 51, 37, 0.1);
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; 
+  background-color: var(--background-pink-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Great Vibes', 'Inter', sans-serif;
+  color: var(--primary-text-color);
+}
+
+section[id] {
+  scroll-margin-top: 12rem; 
+}
+
+.hero-section {
+  scroll-margin-top: 18rem; 
+}
+
+.titelsNames {
+  font-family: 'Great Vibes', cursive;
+}
+
+.links {
+  border-bottom: 1px solid var(--primary-light);
+}
+
+/* Header and navigation */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2px 0;
+  height: 16.25rem;
+  z-index: 1000;
+  background-color: rgba(252, 236, 244, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.header-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.header-subtext {
+  font-size: 24px;
+  font-family: 'Great Vibes', cursive;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center; 
+}
+
+.header-list {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.header-link {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+  color: var(--primary-text-color);
+  letter-spacing: 0.5px; 
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 15px;
+}
+
+.header-link:hover {
+  background-color: var(--primary-text-color);
+  color: var(--background-pink-color);
+  border-radius: 40px; 
+  padding: 8px 20px; 
+  border: 3px solid var(--primary-light);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-size: 24px !important;
+  color: var(--primary-text-color);
+  transition: all 0.3s ease;
+}
+
+.header-link:hover .material-symbols-outlined {
+  color: var(--background-pink-color);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  margin-top: 290px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.flip-card {
+  width: 80%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  perspective: 1500px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  border: 8px solid var(--primary-text-color);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: var(--background-pink-color);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.flip-card-back h3 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.flip-card-back .days-count {
+  font-family: 'Playfair Display', serif;
+  font-size: 9rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.program-section, .dresscode-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.classic-frame {
+  width: 90%; 
+  max-width: 500px; 
+  min-height: 650px; 
+  padding: 50px 30px;
+  background-color: var(--white);
+  border: 3px solid var(--primary-text-color); 
+  border-radius: 80px;   
+  outline: 1px solid var(--primary-text-color);
+  outline-offset: -15px; 
+  box-shadow: inset 0 0 0 10px var(--white);   
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .classic-frame {
+    max-width: 1000px; 
+  }
+}
+
+.program-title {
+  font-family: 'Great Vibes', cursive; 
+  font-size: 4rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--primary-light);
+  color: var(--primary-text-color);
+}
+
+.program-subtitle span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--primary-text-color);
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.location-link {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--primary-text-color);
+  transition: opacity 0.3s ease;
+}
+
+.location-link:hover {
+  opacity: 0.8;
+}
+
+.location-link .material-symbols-outlined {
+  font-size: 2rem !important;
+  vertical-align: middle;
+}
+
+.program-elements {
+  margin-top: 2.4rem;
+  flex-grow: 1;
+}
+
+
+#cause .classic-frame, 
+#gifts .classic-frame {
+  min-height: auto; 
+  padding-bottom: 50px; 
+}
+
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.4; 
+}
+
+
+
+.event-row {
+  display: flex;
+  justify-content: center; 
+
+  gap: 40px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--primary-light);
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  gap: 10;
+}
+
+
+.event-timing {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  min-width: 100px;
+  text-align: left;
+  min-width: 10rem;
+ 
+}
+
+.event-description {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  text-align: left;
+  align-items: flex-start;
+  flex: 1;
+
+}
+
+.dresscode-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--primary-text-color);
+  margin-bottom: 0.2rem;
+  padding: 0 20px;
+}
+
+.dress-image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 3px solid var(--primary-text-color);
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.dress-img-full {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dresscode-text p {
+  text-align: justify; 
+  text-justify: inter-word; 
+  hyphens: auto; 
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+}
+
+#infoForm .classic-frame {
+  min-height: auto;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* Стил на бутона */
+.rsvp-button {
+  display: inline-block;
+  background-color: var(--primary-text-color);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 18px 60px;
+  border-radius: 50px;
+  border: 2px solid var(--primary-text-color);
+  transition: all 0.4s ease; 
+  letter-spacing: 2px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.rsvp-button:hover {
+  background-color: rgba(170, 51, 37, 0.7); 
+  
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  color: var(--white);
+  border: 2px solid var(--primary-text-color);
+  
+
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+@media (max-width: 768px) {
+  .program-subtitle span {
+    font-size: 1.8rem;
+  }
+  .location-link {
+    font-size: 1.6rem;
+  }
+} 
+@media (max-width: 768px) {
+  section[id] { scroll-margin-top: 15rem; }
+  .navigation { height: 15rem; }
+  .hero-section { margin-top: 250px; }
+  .flip-card { width: 90%; aspect-ratio: 1 / 1.2; }
+  .flip-card-back .days-count { font-size: 6rem; }
+  .classic-frame { width: 95%; padding: 40px 20px; border-radius: 40px; }
+  .program-title { font-size: 2.8rem; }
+}
+@media (max-width: 768px) {
+  .navigation {
+    height: auto; 
+    padding-bottom: 15px;
+    position: fixed; 
+  }
+  .newlywedsNames div[style*="font-size: 80px"] {
+    font-size: 45px !important;
+  }
+  .newlywedsNames div[style*="font-size: 40px"] {
+    font-size: 25px !important;
+  }
+
+  .header-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .header-subtext {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .header-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    padding: 0 10px;
+    justify-items: center;
+  }
+
+  .header-link {
+    font-size: 14px; 
+    padding: 5px;
+    gap: 1px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 20px !important; 
+  }
+
+  .header-link-text {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .hero-section {
+    margin-top: 220px; 
+  }
+
+  section[id] {
+    scroll-margin-top: 230px; 
+  }
+}
